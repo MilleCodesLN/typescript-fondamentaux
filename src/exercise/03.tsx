@@ -20,17 +20,57 @@ init()
 // - params un object non defini
 // - payload peut avoir n'importe quel type
 
-let person
+let person:{  
+  name: string
+  age: number
+  isActive: boolean
+  roles: any
+  params: object
+  payload: any
+  friend: {
+    name: string
+    age: number
+    isActive: boolean
+    roles: string[]
+    params: object
+    payload: any
+  }
+}
+
 
 // 🐶 affecte des valeurs à person
 // laisse payload undefined
+
+
 person = {
   //
+  name: 'John',
+  age: 23,
+  isActive: true,
+  roles: ['ADMIN', 'USER'],
+  params: {},
+  payload: undefined,
+  friend: {
+    name: 'Mike',
+    age: 33,
+    isActive: true,
+    roles: ['GUEST'],
+    params: {},
+    payload: undefined,
+  },
 }
 
 // 🤖 Affiche dans le navigateur grace à `displayText` le libellé suivant
 // 'John à 30 ans et a le role ADMIN'
 
+displayText(
+  `${person.name} à ${person.age} ans et a le role ${person.roles[0]}`
+)
+
+displayText(
+  `${person.name} a pour ami ${person.friend.name} `
+)
+// ✔️ Fin de l'exercice
 /*
 eslint
   @typescript-eslint/no-unused-vars: "off"
